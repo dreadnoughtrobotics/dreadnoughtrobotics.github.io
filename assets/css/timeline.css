@@ -283,3 +283,15 @@ a:hover {
 .marker-outline .timeline-item:hover .timeline-marker:before {
   background: #FF6B6B;
 }
+.d-flex {
+	display: -ms-flexbox !important;
+	display: flex !important;
+}
+.justify-content-between {
+	-ms-flex-pack: justify !important;
+	justify-content: space-between !important;
+}
+.align-items-center {
+	-ms-flex-align: center !important;
+	align-items: center !important;
+}
