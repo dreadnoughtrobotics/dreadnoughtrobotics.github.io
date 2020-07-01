@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
@@ -19,49 +20,43 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./assets/css/timeline.css">
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 <body>
     <!-- ======= Header ======= -->
-   <header id="header" class="d-flex align-items-center">
+  <header id="header" class="d-flex align-items-center">
     <div class="container">
 
       <!-- The main logo is shown in mobile version only. The centered nav-logo in nav menu is displayed in desktop view  -->
-      <!-- <div class="logo d-block d-lg-none"> -->
-      <!--   <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      <!-- </div> -->
+      <div class="logo d-block d-lg-none">
+        <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul class="nav-inner">
-          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li class="drop-down"><a href="">About</a>
             <ul>
-              <li><a href="./index.html#about">About Us</a></li>
-              <li><a href="">Timeline</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li class = "active"><a href="Timeline.html">Timeline</a></li>
             </ul>
           </li>
           <li><a href="team-details.html">Our Team</a></li>
 
-          <li class="nav-logo"><a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></li>
+          <li class="nav-logo"><a href="index.html#hero"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></li>
 
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="./index.html#projects">Our Bots</a></li>
-          <li><a href="./index.html#contact">Contact</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
+          <li><a href="#projects">Our Bots</a></li>
+          <li><a href="#contact">Contact</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
 
     </div>
-
-<!-- partial:index.partial.html -->
-</header>
-<main id="main">
+  </header>
+  <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs" data-aos="fade-up">
