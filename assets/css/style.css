@@ -2,10 +2,6 @@
 # General
 --------------------------------------------------------------*/
 
-html {
-   scroll-behavior: smooth;
-}
-
 body {
   font-family: "Open Sans", sans-serif;
   color: #555555;
