@@ -1310,3 +1310,6 @@ a {
         max-width: 400px;
     }
 }
+section#sponsors div.project{
+	margin : 0.5rem 1.2rem;
+	}
