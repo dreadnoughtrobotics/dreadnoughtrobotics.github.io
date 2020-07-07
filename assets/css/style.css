@@ -12,7 +12,7 @@ a {
 }
 
 a:hover {
-  color: #9ed49a;
+  color: #0e1b4d;
   text-decoration: none;
 }
 
@@ -1133,7 +1133,7 @@ section {
 }
 
 .gallery #gallery-flters li:hover, .gallery #gallery-flters li.filter-active {
-  color: #006fbe;
+  color: #f82249;
 }
 
 .gallery #gallery-flters li:last-child {
