@@ -458,11 +458,46 @@ section {
   margin-bottom: 0;
 }
 
+/*--------------------------------------------------------------
+# Departments
+--------------------------------------------------------------*/
 
+#departments h5 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+#departments #graph {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#departments .bg-chassis {
+  background-color: #768390!important;
+}
+
+#departments .bg-electrical {
+  background-color: #f82249!important;
+}
+
+#departments .bg-programming {
+  background-color: #0e1b4d!important;
+}
+
+#departments .bg-management {
+  background-color: #222222!important;
+}
+
+#departments #cards .size {
+  max-width: 18rem;
+  min-height: 20rem;
+}
 
 
 /*--------------------------------------------------------------
-# sponsors
+# Sponsors
 --------------------------------------------------------------*/
 .sponsors {
   background: whitesmoke;

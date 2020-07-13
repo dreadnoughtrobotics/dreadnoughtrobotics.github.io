@@ -186,3 +186,53 @@
   });
  
 })(jQuery);
+
+//Javascript for Chart
+
+  var options = {
+    series: [21, 6, 16, 13],
+    chart: {
+    width: 380,
+    type: 'donut',
+  },
+  plotOptions: {
+    pie: {
+      donut: {
+        labels: {
+          show: true,
+          total: {
+            showAlways: true,
+            show: true,
+            fontSize: '26px',
+            fontWeight: 600,
+          },
+          value: {
+            fontSize: '22px',
+          }
+        }
+      }
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  responsive: [{
+    breakpoint: 450,
+    options: {
+      chart: {
+        width: 300
+      },
+      legend: {
+        show: false
+      }
+    }
+  }],
+  colors: ['#f82249', '#222222', '#0e1b4d', '#768390'],
+  labels: ['Electrical and Electronics', 'Management', 'Programming and Analysis', 'Chassis and Design'],
+  legend: {
+    show: false
+  }
+  };
+  
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  chart.render();
