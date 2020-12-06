@@ -1,0 +1,29 @@
+#include<Servo.h>              //Servo library
+ 
+Servo servo;   	//initialize a servo object for the connected servo  
+                
+   
+ 
+void setup() 
+{ 
+  servo_test.attach(3);  // attach the signal pin of servo to pin3 of arduino
+} 
+  
+void loop() 
+{ 
+  forint i= 0; i<= 180; i++) 	 // command to move from 0 degrees to 180 degrees 
+  {                                  
+    servo.write(i);              	 //command to rotate the servo to the specified angle
+    delay(50);                       
+  } 
+ 
+ 
+  
+  for(i = 180; i>=0; i--)     // command to move from 180 degrees to 0 degrees 
+  {                                
+    servo.write(i);              //command to rotate the servo to the specified angle
+    delay(50);                       
+  } 
+
+   
+}
