@@ -800,11 +800,11 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: url("../img/hero-bg.png") center center repeat;
+  background: url("../img/cool-footer-img.jpg") center center repeat;
   color: #fff;
   font-size: 14px;
   position: relative;
-  background-size: auto;
+  background-size: cover;
 }
 
 #footer::before {
@@ -814,6 +814,7 @@ section {
   right: 0;
   top: 0;
   bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
