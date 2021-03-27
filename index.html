@@ -29,6 +29,18 @@
 
 <body>
 
+  <div id="overlay">
+    <div id="overlay__content">
+      <div id="overlay__card">
+        <div id="overlay__card__content">
+          <i class='bx bxs-x-circle' id="overlay__close"></i>
+          <h1>We are recruiting!</h1>
+          <a target="_blank" href="#" class="btn btn-primary btn-large">More Info Here</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
@@ -549,6 +561,15 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    window.addEventListener('load', () => {
+      $("#overlay__close").on('click', function() {
+        var a = $("#overlay");
+        a[0].style.display = 'none';
+      });
+    });
+  </script>
 
 </body>
 
