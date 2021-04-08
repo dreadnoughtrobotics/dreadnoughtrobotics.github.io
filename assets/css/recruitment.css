@@ -1,6 +1,6 @@
 .recruitment {
     background: rgba(255,255,255,0.8);
-    margin-top : 10px;
+    margin-top : 25px;
     margin-bottom: 10px;
     border-radius: 10px;
     padding: 20px;
@@ -30,15 +30,45 @@
     height: 1px;
 }
 
+.recruitment__body {
+    display: flex;
+    flex-direction: column;
+}
+
 .recruitment__section {
     color: black;
-    height: 200px;
+    margin-bottom: 30px;
+}
+
+.recruitment__section__heading {
+    font-weight: bolder;
+    font-size: x-large;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.recruitment__section__content {
+    padding: 0 30px;
+    text-align: justify;
+}
+
+.recruitment__section__table {
+    margin : auto;
+    text-align: center;
+}
+
+.recruitment__section__table td {
+    padding: 2px 5px;
 }
 
 #recruitment__headerRight {
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.applyContent {
+    text-align: center !important;
 }
 
 .gear-svg-container{
