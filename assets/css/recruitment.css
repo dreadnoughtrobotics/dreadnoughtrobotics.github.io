@@ -14,9 +14,10 @@
     align-items: flex-end;
 }
 
-.recruitment__header span {
+.recruitment__header div {
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: large;
+    color: #000000 !important;
     z-index: 500;
 }
 
@@ -52,12 +53,13 @@
     text-align: justify;
 }
 
-.recruitment__section__table {
+.recruitment__section__table, td, th{
+    border: 1px solid black;
     margin : auto;
     text-align: center;
 }
 
-.recruitment__section__table td {
+.recruitment__section__table, td, th{
     padding: 2px 5px;
 }
 
