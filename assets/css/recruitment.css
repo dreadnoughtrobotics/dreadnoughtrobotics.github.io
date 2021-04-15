@@ -16,6 +16,7 @@
 .recruitment__header .rday_timer{
     text-align: center ;
     font-size: medium;
+    margin: auto;
 }
 
 .recruitment__header #rday_timer{
@@ -25,13 +26,16 @@
 }
 
 @media only screen and (max-width: 800px){
-    .rday_timer{
-        text-indent: 100%;
+    .recruitment__header .rday_timer{
+        /* text-indent: 100%;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: hidden; */
+    font-size: 2vw;
+    box-align: left;
     }
-    #rday_timer{
-        font-size: 10px;
+    .recruitment__header #rday_timer{
+        font-size: 2vw;
+        box-align: left;
     }
 }
 .recruitment__header div {
