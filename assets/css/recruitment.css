@@ -86,7 +86,9 @@
 .recruitment__section__table, td, th{
     padding: 2px 5px;
 }
-
+td:nth-child(5){
+    width: 100%;
+}
 #recruitment__headerRight {
     position: relative;
     display: flex;
