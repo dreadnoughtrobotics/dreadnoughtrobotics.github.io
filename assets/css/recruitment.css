@@ -27,9 +27,9 @@
 
 @media only screen and (max-width: 800px){
     .recruitment__header .rday_timer{
-        /* text-indent: 100%;
+    text-indent: 100%;
     white-space: nowrap;
-    overflow: hidden; */
+    overflow: hidden;
     font-size: 2vw;
     box-align: left;
     }
