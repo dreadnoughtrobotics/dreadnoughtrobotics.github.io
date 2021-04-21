@@ -109,7 +109,9 @@ td:nth-child(5){
     height : 100px;
     fill: black;
 }
-
+#chatSpan{
+    margin: 2px;
+}
 .gear-svg-small-shadow, .gear-svg-medium-shadow, .gear-svg-large-shadow {
     fill: rgba(0, 0, 0, 0.05); 
 }
