@@ -1239,6 +1239,18 @@ section {
   -o-transform: translateX(0);
   transform: translateX(0);
 }
+
+@media only screen and (max-width: 360px) {
+  .cd-horizontal-timeline .events-content li.selected {
+    position: absolute;
+  }
+  
+
+  .cd-horizontal-timeline .events-content li.selected {
+    position: absolute;
+  }
+  
+}
 .cd-horizontal-timeline .events-content li.enter-right, .cd-horizontal-timeline .events-content li.leave-right {
   -webkit-animation-name: cd-enter-right;
   -moz-animation-name: cd-enter-right;
