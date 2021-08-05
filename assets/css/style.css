@@ -1200,7 +1200,7 @@ section {
   position: relative;
   width: 100%;
   margin: 2em 0;
-  min-width: 280px;
+  min-height: 280px;
   list-style: none;
   overflow: hidden;
   -webkit-transition: height 0.4s;
