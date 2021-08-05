@@ -1200,6 +1200,7 @@ section {
   position: relative;
   width: 100%;
   margin: 2em 0;
+  min-width: 280px;
   list-style: none;
   overflow: hidden;
   -webkit-transition: height 0.4s;
@@ -1241,13 +1242,9 @@ section {
 }
 
 @media only screen and (max-width: 360px) {
-  .cd-horizontal-timeline .events-content li.selected {
-    position: absolute;
-  }
-  
 
   .cd-horizontal-timeline .events-content li.selected {
-    position: absolute;
+    
   }
   
 }
