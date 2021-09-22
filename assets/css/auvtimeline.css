@@ -73,9 +73,9 @@ body{
  }
  .main-timeline .timeline-icon{
     color: #0c0c0c;
-    font-size: 70px;
+    font-size: 53px;
     display: inline-block;
-    transform: translateY(-50%);
+    transform: translate(-50%,-50%);
     position: absolute;
     left:35%;
     top: 50%;
@@ -168,7 +168,7 @@ body{
  @media screen and (max-width:479px){
     .main-timeline .timeline-icon{
         font-size: 50px;
-        transform:translateY(0);
+        transform:translate(-50%,-50%);
         top: 25%;
         left: 20%;
     }
