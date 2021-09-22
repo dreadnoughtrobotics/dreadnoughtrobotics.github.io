@@ -1,0 +1,199 @@
+body{    
+    font-family: 'Roboto Condensed', sans-serif;
+    
+ }
+ html{
+     scroll-behavior: smooth;
+ }
+     
+     
+     
+   .main-timeline{
+     font-family: 'Roboto Condensed', sans-serif;
+    padding: 20px 0;
+    position: relative;
+ 
+    
+ }
+ .main-timeline:before,
+ .main-timeline:after{
+    content: '';
+    height: 40px;
+    width: 40px;
+    background-color: #070707;
+    border-radius: 50%;
+    border: 10px solid #b3b5b6;
+    transform:translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    z-index: 2;
+ }
+ .main-timeline:after{
+    top: auto;
+    bottom:15px;
+ }
+ .main-timeline .timeline{
+    padding: 35px 0;
+    margin-top: -30px;
+    position: relative;
+    z-index: 1;
+ }
+ .main-timeline .timeline:before,
+ .main-timeline .timeline:after{
+    content: '';
+    height: 100%;
+    width: 50%;
+    border-radius: 100px 0 0 100px;
+    border: 15px solid #0d0d0e;
+    border-right: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+ }
+ .main-timeline .timeline:after{
+    height: calc(100% - 30px);
+    width: calc(50% - 12px);
+    border-color: #bbb7b7;
+    left: 12px;
+    top: 15px;
+ }
+ .main-timeline .timeline-content{ display:inline-block; }
+ .main-timeline .timeline-content:hover{ text-decoration: none; }
+ .main-timeline .timeline-year{
+    color: #0c0c0c;
+    font-size: 40px;
+    font-weight: 600;
+    display: inline-block;
+    transform:translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 10%;
+ }
+ .main-timeline .timeline-icon{
+    color: #0c0c0c;
+    font-size: 70px;
+    display: inline-block;
+    transform: translateY(-50%);
+    position: absolute;
+    left:35%;
+    top: 50%;
+ }
+ .main-timeline .content{
+    color: #070707;
+    width: 50%;
+    padding: 20px;
+    display: inline-block;
+     float:right;
+ 
+    
+ }
+ 
+ .main-timeline .title{
+    color: #0d0d0e;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;     
+    margin: 0 0 5px 0;
+ }
+ .main-timeline .description{
+    font-size: 16px;     
+    margin: 0;
+ }
+ .main-timeline .timeline:nth-child(even):before{
+    left: auto;
+    right: 0;
+    border-radius: 0 100px 100px 0;
+    border: 15px solid  #bbb7b7;
+    border-left: none;
+ }
+ .main-timeline .timeline:nth-child(even):after{
+    left: auto;
+    right: 12px;
+    border: 15px solid rgb(19, 18, 18);
+    border-left: none;
+    border-radius: 0 100px 100px 0;
+ }
+ .main-timeline .timeline:nth-child(even) .content{ float: left; }
+ .main-timeline .timeline:nth-child(even) .timeline-year{
+    left: auto;
+    right: 10%;
+ }
+ .main-timeline .timeline:nth-child(even) .timeline-icon{
+    left: auto;
+    right: 28%;
+ }
+ .tittle{
+     margin-top: 2%;
+     margin-left: 45%;
+     margin-bottom: 2%;
+     
+ }
+
+ 
+ @media screen and (max-width:1200px){
+    .main-timeline .timeline:after{ border-radius: 88px 0 0 88px; }
+    .main-timeline .timeline:nth-child(even):after{ border-radius: 0 88px 88px 0; }
+ }
+ @media screen and (max-width:767px){
+    .main-timeline .timeline{ margin-top: -19px; }
+    .main-timeline .timeline:before {
+        border-radius: 50px 0 0 50px;
+        border-width: 10px;
+    }
+    .main-timeline .timeline:after {
+        height: calc(100% - 18px);
+        width: calc(50% - 9px);
+        border-radius: 43px 0 0 43px;
+        border-width:10px;
+        top: 9px;
+        left: 9px;
+    }
+    .main-timeline .timeline:nth-child(even):before {
+        border-radius: 0 50px 50px 0;
+        border-width: 10px;
+    }
+    .main-timeline .timeline:nth-child(even):after {
+        height: calc(100% - 18px);
+        width: calc(50% - 9px);
+        border-radius: 0 43px 43px 0;
+        border-width: 10px;
+        top: 9px;
+        right: 9px;
+    }
+    .main-timeline .timeline-icon{ font-size: 60px; }
+    .main-timeline .timeline-year{ font-size: 40px; }
+ }
+ @media screen and (max-width:479px){
+    .main-timeline .timeline-icon{
+        font-size: 50px;
+        transform:translateY(0);
+        top: 25%;
+        left: 20%;
+    }
+    .main-timeline .timeline-year{
+        font-size: 25px;
+        transform:translateY(0);
+        top: 65%;
+        left: 9%;
+    }
+    .main-timeline .content{
+        width: 68%;
+        padding: 10px;
+    }
+    .main-timeline .title{ font-size: 18px; }
+    .main-timeline .timeline:nth-child(even) .timeline-icon{
+        right: 10%;
+    }
+    .main-timeline .timeline:nth-child(even) .timeline-year{
+        right: 9%;
+    }
+ }
+ .timeline{
+     display: flex;
+     justify-content:space-evenly;
+     align-items:center;
+     
+     }
+ 
