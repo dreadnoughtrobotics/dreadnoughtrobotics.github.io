@@ -142,7 +142,6 @@
 	});
 
 	// Darkmode toggle
-	localStorage.setItem("darkmode", "false");
 	var toggleBtn = `<div id="darkmodeToggle">
 	  <input type="checkbox" class="darkmodeCheck" id="darkmodeT"/>
 	  <label class="darkLabel" for="darkmodeT">
@@ -179,7 +178,6 @@
 					DarkReader.disable();
 					$(".darkLabel").css("background-color", "#ffa600");
 					$(".ball").css("background-color", "#ff0000");
-					localStorage.setItem("darkmode", "false");
 					Cookies.set("darkmode", "false");
 				}
 			});
