@@ -1,238 +1,349 @@
-!(function($) {
-  "use strict";
+!(function ($) {
+	("use strict");
 
-  // Smooth scroll for the navigation menu and links with .scrollto classes
-  $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      e.preventDefault();
-      var target = $(this.hash);
-      if (target.length) {
+	// Smooth scroll for the navigation menu and links with .scrollto classes
+	$(document).on(
+		"click",
+		".nav-menu a, .mobile-nav a, .scrollto",
+		function (e) {
+			if (
+				location.pathname.replace(/^\//, "") ==
+					this.pathname.replace(/^\//, "") &&
+				location.hostname == this.hostname
+			) {
+				e.preventDefault();
+				var target = $(this.hash);
+				if (target.length) {
+					var scrollto = target.offset().top + 2;
 
-        var scrollto = target.offset().top + 2;
+					if ($("#header").length) {
+						scrollto -= $("#header").outerHeight();
+					}
 
-        if ($('#header').length) {
-          scrollto -= $('#header').outerHeight()
+					if ($(this).attr("href") == "#header") {
+						scrollto = 0;
+					}
 
-        }
+					$("html, body").animate(
+						{
+							scrollTop: scrollto,
+						},
+						1500,
+						"easeInOutExpo"
+					);
 
-        if ($(this).attr("href") == '#header') {
-          scrollto = 0;
-        }
+					if ($(this).parents(".nav-menu, .mobile-nav").length) {
+						$(".nav-menu .active, .mobile-nav .active").removeClass("active");
+						$(this).closest("li").addClass("active");
+					}
 
-        $('html, body').animate({
-          scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
+					if ($("body").hasClass("mobile-nav-active")) {
+						$("body").removeClass("mobile-nav-active");
+						$(".mobile-nav-toggle i").toggleClass(
+							"icofont-navigation-menu icofont-close"
+						);
+						$(".mobile-nav-overly").fadeOut();
+					}
+					return false;
+				}
+			}
+		}
+	);
 
-        if ($(this).parents('.nav-menu, .mobile-nav').length) {
-          $('.nav-menu .active, .mobile-nav .active').removeClass('active');
-          $(this).closest('li').addClass('active');
-        }
+	// Mobile Navigation
+	if ($(".nav-menu").length) {
+		var $mobile_nav = $(".nav-menu").clone().prop({
+			class: "mobile-nav d-lg-none",
+		});
+		$("body").append($mobile_nav);
+		$(".mobile-nav .nav-logo").remove();
+		$("body").prepend(
+			'<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>'
+		);
+		$("body").append('<div class="mobile-nav-overly"></div>');
 
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-          $('.mobile-nav-overly').fadeOut();
-        }
-        return false;
-      }
-    }
-  });
+		$(document).on("click", ".mobile-nav-toggle", function (e) {
+			$("body").toggleClass("mobile-nav-active");
+			$(".mobile-nav-toggle i").toggleClass(
+				"icofont-navigation-menu icofont-close"
+			);
+			$(".mobile-nav-overly").toggle();
+		});
 
-  // Mobile Navigation
-  if ($('.nav-menu').length) {
-    var $mobile_nav = $('.nav-menu').clone().prop({
-      class: 'mobile-nav d-lg-none'
-    });
-    $('body').append($mobile_nav);
-    $('.mobile-nav .nav-logo').remove();
-    $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
-    $('body').append('<div class="mobile-nav-overly"></div>');
+		$(document).on("click", ".mobile-nav .drop-down > a", function (e) {
+			e.preventDefault();
+			$(this).next().slideToggle(300);
+			$(this).parent().toggleClass("active");
+		});
 
-    $(document).on('click', '.mobile-nav-toggle', function(e) {
-      $('body').toggleClass('mobile-nav-active');
-      $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-      $('.mobile-nav-overly').toggle();
-    });
+		$(document).click(function (e) {
+			var container = $(".mobile-nav, .mobile-nav-toggle");
+			if (!container.is(e.target) && container.has(e.target).length === 0) {
+				if ($("body").hasClass("mobile-nav-active")) {
+					$("body").removeClass("mobile-nav-active");
+					$(".mobile-nav-toggle i").toggleClass(
+						"icofont-navigation-menu icofont-close"
+					);
+					$(".mobile-nav-overly").fadeOut();
+				}
+			}
+		});
+	} else if ($(".mobile-nav, .mobile-nav-toggle").length) {
+		$(".mobile-nav, .mobile-nav-toggle").hide();
+	}
 
-    $(document).on('click', '.mobile-nav .drop-down > a', function(e) {
-      e.preventDefault();
-      $(this).next().slideToggle(300);
-      $(this).parent().toggleClass('active');
-    });
+	// Navigation active state on scroll
+	var nav_sections = $("section");
+	var main_nav = $(".nav-menu, #mobile-nav");
 
-    $(document).click(function(e) {
-      var container = $(".mobile-nav, .mobile-nav-toggle");
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-          $('.mobile-nav-overly').fadeOut();
-        }
-      }
-    });
-  } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
-    $(".mobile-nav, .mobile-nav-toggle").hide();
-  }
+	$(window).on("scroll", function () {
+		var cur_pos = $(this).scrollTop() + 110;
 
-  // Navigation active state on scroll
-  var nav_sections = $('section');
-  var main_nav = $('.nav-menu, #mobile-nav');
+		nav_sections.each(function () {
+			var top = $(this).offset().top,
+				bottom = top + $(this).outerHeight();
 
-  $(window).on('scroll', function() {
-    var cur_pos = $(this).scrollTop() + 110;
+			if (cur_pos >= top && cur_pos <= bottom) {
+				if (cur_pos <= bottom) {
+					main_nav.find("li").removeClass("active");
+				}
+				main_nav
+					.find('a[href="#' + $(this).attr("id") + '"]')
+					.parent("li")
+					.addClass("active");
+			}
+		});
+	});
 
-    nav_sections.each(function() {
-      var top = $(this).offset().top,
-        bottom = top + $(this).outerHeight();
+	// Stick the header at top on scroll
+	$("#header").sticky({
+		topSpacing: 0,
+		zIndex: "50",
+	});
 
-      if (cur_pos >= top && cur_pos <= bottom) {
-        if (cur_pos <= bottom) {
-          main_nav.find('li').removeClass('active');
-        }
-        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
-      }
-    });
-  });
+	// Back to top button
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			$(".back-to-top").fadeIn("slow");
+		} else {
+			$(".back-to-top").fadeOut("slow");
+		}
+	});
 
+	$(".back-to-top").click(function () {
+		$("html, body").animate(
+			{
+				scrollTop: 0,
+			},
+			1500,
+			"easeInOutExpo"
+		);
+		return false;
+	});
 
-  // Stick the header at top on scroll
-  $("#header").sticky({
-    topSpacing: 0,
-    zIndex: '50'
-  });
+	// Darkmode toggle
+	localStorage.setItem("darkmode", "false");
+	var toggleBtn = `<div id="darkmodeToggle">
+	  <input type="checkbox" class="darkmodeCheck" id="darkmodeT"/>
+	  <label class="darkLabel" for="darkmodeT">
+		  <i class="darkOpt OptDark"></i>
+		  <i class="darkOpt OptLight"></i>
+		  <div class="ball"></div>
+	  </label>
+  </div>`;
 
-  // Back to top button
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-    }
-  });
+	$("body").append(toggleBtn);
 
-  $('.back-to-top').click(function() {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1500, 'easeInOutExpo');
-    return false;
-  });
+	function setTopPosition() {
+		var $headerHeight = parseInt($("#header").css("height"), 10);
+		$("#darkmodeToggle").css("top", $headerHeight + 15);
+	}
 
-  // Porfolio isotope and filter
-  $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
-    });
+	setTopPosition();
+	$(window).on("resize", setTopPosition);
 
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
+	function updateDarkModePref() {
+		$.getScript("./assets/vendor/darkreader/darkreader.js", function () {
+			DarkReader.setFetchMethod(window.fetch);
+			$(".darkmodeCheck").change(function () {
+				if ($(this).is(":checked")) {
+					DarkReader.enable({
+						brightness: 100,
+						contrast: 90,
+						sepia: 10,
+					});
+					$(".darkLabel").css("background-color", "#00a6ff");
+					$(".ball").css("background-color", "#0000ff");
+					Cookies.set("darkmode", "true");
+				} else {
+					DarkReader.disable();
+					$(".darkLabel").css("background-color", "#ffa600");
+					$(".ball").css("background-color", "#ff0000");
+					localStorage.setItem("darkmode", "false");
+					Cookies.set("darkmode", "false");
+				}
+			});
+		});
+	}
 
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-    });
+	function loadDarkModePref() {
+		$.getScript("./assets/vendor/darkreader/darkreader.js", function () {
+			DarkReader.setFetchMethod(window.fetch);
+			$.getScript("./assets/vendor/jsCookie/dist/js.cookie.js", function () {
+				if (Cookies.get("darkmode") === "true") {
+					DarkReader.enable({
+						brightness: 100,
+						contrast: 90,
+						sepia: 10,
+					});
+					$(".darkLabel").css("background-color", "#00a6ff");
+					$(".ball").css("background-color", "#0000ff");
+					$(".darkmodeCheck").prop("checked", true);
+				} else {
+					DarkReader.disable();
+					$(".darkLabel").css("background-color", "#ffa600");
+					$(".ball").css("background-color", "#ff0000");
+					$(".darkmodeCheck").prop("checked", false);
+				}
+			});
+		});
+	}
 
-    // Initiate venobox (lightbox feature used in portofilo)
-    $(document).ready(function() {
-      $('.venobox').venobox();
-    });
-  });
+	$(window).on("load", loadDarkModePref);
+	updateDarkModePref();
 
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
+	var HeaderOffset = Number($("#header").offset().top);
+	function displayToggle() {
+		if (Number($(window).scrollTop()) + 5 > HeaderOffset) {
+			$("#darkmodeToggle").fadeIn("slow");
+		} else {
+			$("#darkmodeToggle").fadeOut("slow");
+		}
+	}
+	$(window).on("scroll", displayToggle);
+	$(window).on("load", displayToggle);
 
-  // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
+	// Porfolio isotope and filter
+	$(window).on("load", function () {
+		var portfolioIsotope = $(".portfolio-container").isotope({
+			itemSelector: ".portfolio-item",
+			layoutMode: "fitRows",
+		});
 
-  // Initi AOS
-  AOS.init({
-    duration: 600
-  });
+		$("#portfolio-flters li").on("click", function () {
+			$("#portfolio-flters li").removeClass("filter-active");
+			$(this).addClass("filter-active");
 
+			portfolioIsotope.isotope({
+				filter: $(this).data("filter"),
+			});
+		});
 
-  //extra
-   // Porfolio isotope and filter
-   $(window).on('load', function() {
-    var galleryIsotope = $('.gallery-container').isotope({
-      itemSelector: '.gallery-item'
-    });
+		// Initiate venobox (lightbox feature used in portofilo)
+		$(document).ready(function () {
+			$(".venobox").venobox();
+		});
+	});
 
-    $('#gallery-flters li').on('click', function() {
-      $("#gallery-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
+	// Testimonials carousel (uses the Owl Carousel library)
+	$(".testimonials-carousel").owlCarousel({
+		autoplay: true,
+		dots: true,
+		loop: true,
+		items: 1,
+	});
 
-      galleryIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-    });
+	// Portfolio details carousel
+	$(".portfolio-details-carousel").owlCarousel({
+		autoplay: true,
+		dots: true,
+		loop: true,
+		items: 1,
+	});
 
-    // Initiate venobox lightbox
-    $(document).ready(function() {
-      $('.venobox').venobox({
-        'share': false
-      });
-    });
-  });
- 
+	// Initi AOS
+	AOS.init({
+		duration: 600,
+	});
+
+	//extra
+	// Porfolio isotope and filter
+	$(window).on("load", function () {
+		var galleryIsotope = $(".gallery-container").isotope({
+			itemSelector: ".gallery-item",
+		});
+
+		$("#gallery-flters li").on("click", function () {
+			$("#gallery-flters li").removeClass("filter-active");
+			$(this).addClass("filter-active");
+
+			galleryIsotope.isotope({
+				filter: $(this).data("filter"),
+			});
+		});
+
+		// Initiate venobox lightbox
+		$(document).ready(function () {
+			$(".venobox").venobox({
+				share: false,
+			});
+		});
+	});
 })(jQuery);
 
 //Javascript for Chart
 
-  var options = {
-    series: [21, 6, 16, 13],
-    chart: {
-    width: 380,
-    type: 'donut',
-  },
-  plotOptions: {
-    pie: {
-      donut: {
-        labels: {
-          show: true,
-          total: {
-            showAlways: true,
-            show: true,
-            fontSize: '26px',
-            fontWeight: 600,
-          },
-          value: {
-            fontSize: '22px',
-          }
-        }
-      }
-    }
-  },
-  dataLabels: {
-    enabled: false
-  },
-  responsive: [{
-    breakpoint: 450,
-    options: {
-      chart: {
-        width: 300
-      },
-      legend: {
-        show: false
-      }
-    }
-  }],
-  colors: ['#f82249', '#222222', '#0e1b4d', '#768390'],
-  labels: ['Electrical and Electronics', 'Management', 'Programming and Analysis', 'Chassis and Design'],
-  legend: {
-    show: false
-  }
-  };
-  
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
-  chart.render();
+var options = {
+	series: [21, 6, 16, 13],
+	chart: {
+		width: 380,
+		type: "donut",
+	},
+	plotOptions: {
+		pie: {
+			donut: {
+				labels: {
+					show: true,
+					total: {
+						showAlways: true,
+						show: true,
+						fontSize: "26px",
+						fontWeight: 600,
+					},
+					value: {
+						fontSize: "22px",
+					},
+				},
+			},
+		},
+	},
+	dataLabels: {
+		enabled: false,
+	},
+	responsive: [
+		{
+			breakpoint: 450,
+			options: {
+				chart: {
+					width: 300,
+				},
+				legend: {
+					show: false,
+				},
+			},
+		},
+	],
+	colors: ["#f82249", "#222222", "#0e1b4d", "#768390"],
+	labels: [
+		"Electrical and Electronics",
+		"Management",
+		"Programming and Analysis",
+		"Chassis and Design",
+	],
+	legend: {
+		show: false,
+	},
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
