@@ -58,12 +58,12 @@ h6 {
 # Darkmode toggle feature
 --------------------------------------------------------------*/
 #darkmodeToggle {
-  display: none;
-  position: fixed;
-  top: 0;
+  position: absolute;
   right: 15px;
-  /* z-index: 9999; */
+  z-index: 51;
   background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
 }
 
 .darkmodeCheck {
@@ -72,42 +72,55 @@ h6 {
 }
 
 .darkLabel {
-  background-color: #ffa600;
+  background-color: #000;
   border-radius: 50px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px;
+  margin: 0px;
   position: relative;
   height: 26px;
-  width: 50px;
+  width: 60px;
 }
 
 .darkLabel .ball {
-  background-color: #ff0000;
-  border-radius: 50%;
+  background-color: #fff;
+  border-radius: 12px;
   position: absolute;
+  z-index: 56;
   top: 2px;
   left: 2px;
   height: 22px;
-  width: 22px;
+  width: 30px;
   transform: translateX(0px);
   transition: transform 0.2s linear;
 }
 
 .darkmodeCheck:checked+.darkLabel .ball {
-  transform: translateX(24px);
+  transform: translateX(26px);
 }
 
-.OptDark {
-  color: #f1c40f;
+.darkLabel i {
+  background-size: 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.OptLight {
-  color: #f39c12;
+.darkOpt {
+  z-index: 52;
+  height: 100%;
+  width: 50%;
 }
 
+.darkOpt .OptLight {
+  float: left;
+}
+
+.darkOpt .OptDark {
+  float: right;
+}
 
 /*--------------------------------------------------------------
 # Disable AOS delay on mobile
