@@ -1,0 +1,100 @@
+
+.container{
+    scroll-snap-align: start;
+}
+.parent {
+
+
+    scroll-snap-type: y ;
+  min-height: 90vh;
+    max-height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+
+  }
+
+ .child{
+    
+  border-bottom: 1px solid white;
+    padding: 3rem;
+    font-size: 1.4rem;
+ 
+    background:rgb(252, 252, 252);
+    text-align: center;
+    scroll-snap-align: start;
+    display: flex;
+    flex-flow: column;
+    justify-content:center;
+
+    
+    color: rgb(34, 33, 33);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+
+    
+  }
+  .child:nth-child(even){
+     background-color: rgb(20, 18, 18);
+     color: rgb(228, 225, 222);;
+   flex-direction: row-reverse;
+  }
+
+  .child h3{
+    color: rgb(228, 47, 40);
+}
+  .content1{
+   width: 40vw;
+
+
+  }
+ 
+  @media (min-width: 1188px) {
+    .child {
+     min-height: 100vh;
+
+    }
+    .parent{
+        scroll-snap-type: y mandatory;
+    }
+  }
+
+
+ 
+  
+  @media (min-width: 1177px) {
+    .child {
+     justify-content:space-between;
+
+    }
+  }
+  @media (min-width: 1453px) {
+    .child {
+     justify-content: space-around;
+    }
+    .content1{
+        margin-top: 20vh;
+    }
+    .image{
+        margin-top: 20vh;
+    }
+
+    }
+  
+
+  body{
+      overflow: hidden;
+  }
+
+   @media (max-width: 786px)
+   {.content1{
+    width: 80vw;
+    font-size: 20px;
+ 
+ 
+   }
+
+   }
