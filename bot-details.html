@@ -14,7 +14,9 @@
   <link href="assets/img/logo-back.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,15 +28,18 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/bot.css" rel="stylesheet">
+
 
   <!-- Scroller script -->
   <script src="assets/js/scroller.js"></script>
 
 </head>
+
 <body>
 
- <!-- ======= Header ======= -->
-   <header id="header" class="d-flex align-items-center">
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
     <div class="container">
 
       <!-- The main logo is shown in mobile version only. The centered nav-logo in nav menu is displayed in desktop view  -->
@@ -44,7 +49,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul class="nav-inner">
-          <li ><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li class="drop-down"><a href="">About</a>
             <ul>
               <li><a href="index.html#about" class="smooth-goto">About Us</a></li>
@@ -52,18 +57,18 @@
               <li><a href="auv-timeline.html">AUV - Timeline</a></li>
             </ul>
           </li>
-          <li ><a href="team-details.html">Our Team</a></li>
+          <li><a href="team-details.html">Our Team</a></li>
 
           <li class="nav-logo"><a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></li>
 
           <li><a href="gallery.html">Gallery</a></li>
-          <li class="drop-down active"><a href="bot-details.html">Our Bots</a>
+          <li class="drop-down "><a href="bot-details.html">Our Bots</a>
             <ul>
-                <li><a href="bot-details.html#Turret">Turret</a></li>
-                <li><a href="bot-details.html#Skyline">Skyline</a></li>
-                <li><a href="bot-details.html#Kaiser">Kaiser</a></li>
-                <li><a href="bot-details.html#Torpedo">Torpedo</a></li>
-                <li><a href="bot-details.html#Mayhem">Mayhem</a></li>
+              <li><a href="bot-details.html.parent#Turret">Turret</a></li>
+              <li><a href="bot-details.html.parent#Skyline">Skyline</a></li>
+              <li><a href="bot-details.html.parent#Kaiser">Kaiser</a></li>
+              <li><a href="bot-details.html.parent#Torpedo">Torpedo</a></li>
+              <li><a href="bot-details.html.parent#Mayhem">Mayhem</a></li>
             </ul>
           </li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -75,161 +80,122 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main" class="main-page">
-   <!-- ======= Breadcrumbs ======= -->
-<section id="breadcrumbs" class="breadcrumbs" data-aos="fade-up">
-  <div class="container">
+  <div class="parent" id="mydiv" tabindex="-1">
+    
 
-    <div class="d-flex justify-content-between align-items-center">
-      <h2>Our Bots</h2>
-      <ol>
-        <li><a href="index.html">Home</a></li>
-        <li>Our Bots</li>
-      </ol>
+    <div class="child" id="Turret">
+      <div class="content1 content pt-4 pt-lg-0 pl-0 pl-lg-3">
+        <h3>Turret&nbsp;&bull;&nbsp;<span class="text-muted">Robosumo</span></h3>
+        <br>
+        <p class="text-justify">Robo Sumo is an event where two robots wrestle to push each other out of a defined
+          ring. They are divided into different weight categories; points are provided based on the set of rules and
+          regulations.
+          Our bot is built to compete using squared DC geared motors of 300 rpm to provide high torque and SmartDriveDue
+          -30(MDDS30)
+          to provide great steadiness which uses proportional control system. Due to the fierce nature of the
+          competition, hard
+          rubber wheels are used. The selection of all the components that go into the bot has an effect on how the
+          exoskeleton is
+          completed using mild steel, wood and aluminium. Keeping safety in mind.</p>
+      </div>
+      <div class="image">
+
+       <img src="assets/img/projects/5.jpg" class="rounded img-fluid" alt="">
+      </div>
     </div>
 
-  </div>
-</section><!-- End Breadcrumbs -->
-
-    <!-- ======= Project Details Section ======= -->
-    <section id="projects-details" class="wow fadeIn">
-      <!-- <div class="container"> -->
-      <!--   <div class="section-header"> -->
-      <!--     <h2>Bot Details</h2> -->
-      <!--   </div> -->
-        <div class="container" id="Turret">
-            <br><br><br><br><br>
-        <div class="row" >
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
-              
-                <h3>Turret&nbsp;&bull;&nbsp;<span class="text-muted">Robosumo</span></h3>
-              <p class="text-justify">Robo Sumo is an event where two robots wrestle to push each other out of a defined
- ring. They are divided into different weight categories; points are provided based on the set of rules and regulations. 
- Our bot is built to compete using squared DC geared motors of 300 rpm to provide high torque and SmartDriveDue -30(MDDS30) 
- to provide great steadiness which uses proportional control system. Due to the fierce nature of the competition, hard 
- rubber wheels are used. The selection of all the components that go into the bot has an effect on how the exoskeleton is 
- completed using mild steel, wood and aluminium. Keeping safety in mind.</p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="image">
-              <img src="assets/img/projects/5.jpg" class="rounded img-fluid" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container" id="Skyline">
-        <br><br><br><br><br>
-      <div class="row">
-<div class="col-lg-6" data-aos="fade-right">
-            <div class="image">
-              <img src="assets/img/projects/2.jpg" class="rounded img-fluid" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
-              
-                <h3>Skyline&nbsp;&bull;&nbsp;<span class="text-muted">Drone</span></h3>
-              <p class="text-justify">Quadcopters are a category in drones propelled by four rotors, 
+    <div class="child" id="Skyline">
+      <div class="content1 content pt-4 pt-lg-0 pl-0 pl-lg-3">
+        <h3>Skyline&nbsp;&bull;&nbsp;<span class="text-muted">Drone</span></h3>
+        <br>
+        <p class="text-justify">Quadcopters are a category in drones propelled by four rotors, 
 built to compete in racing, task completion, and combat contests. Our drone is controlled by an EACHINE 
 GPS F4 flight controller with integrated OSD, betaflight compatible, and capable of autonomous flight. 
 40A ESCs are incorporated which distributes power from 4S battery to the high rpm motors mounted with the 
 propellers on a sturdy carbon fiber frame to provide a stable flight. FPV cameras are utilized with VR 
 headsets for optimum piloting performance.</p>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="container" id="Kaiser">
-        <br><br><br><br><br>
-      <div class="row">
-<div class="col-lg-6" data-aos="fade-right">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
-              
-                <h3>Kaiser&nbsp;&bull;&nbsp;<span class="text-muted">Nitro Car</span></h3>
+      <div class="image">
+
+        <img src="assets/img/projects/2.jpg" class="rounded img-fluid" alt="">
+      </div>
+    </div>
+    <div class="child" id="Kaiser">
+      <div class="content1 content pt-4 pt-lg-0 pl-0 pl-lg-3">
+        <h3>Kaiser&nbsp;&bull;&nbsp;<span class="text-muted">Nitro Car</span></h3>
+        <br>
               <p class="text-justify">Nitro cars have engines powered with fuel doped by nitromethane which 
 gives enhanced performance than the electric car in terms of speed and run-time. Built on 
 durable aluminium chassis, our nitro car is equipped with powerful Nitrostar F3. 5 HPI 
 engine controlled by 2.4GHz radio system along with aluminium heat sink, braces, shock towers, 
 etc. with a pull starter system, all combined to provide faster acceleration and higher speeds 
 specially made for racing competitions.</p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="image">
-              <img src="assets/img/projects/7.jpg" class="rounded img-fluid" alt="">
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="container" id="Torpedo">
-        <br><br><br><br><br>
-      <div class="row" >
-<div class="col-lg-6" data-aos="fade-right">
-            <div class="image">
-              <img src="assets/img/projects/4.jpg" class="rounded img-fluid" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
-              
-                <h3>Torpedo&nbsp;&bull;&nbsp;<span class="text-muted">All Terrain Vehicle</span></h3>
-              <p class="text-justify">ATV robot is designed and built to deal with different terrains than 
+      <div class="image">
+
+        <img src="assets/img/projects/3.jpg" class="rounded img-fluid" alt="">
+      </div>
+    </div>
+    <div class="child" id="Torpedo">
+      <div class="content1 content pt-4 pt-lg-0 pl-0 pl-lg-3">
+        
+        <h3>Torpedo&nbsp;&bull;&nbsp;<span class="text-muted">All Terrain Vehicle</span></h3>
+        <br>
+        <p class="text-justify">ATV robot is designed and built to deal with different terrains than 
 conventional vehicles. They have to complete the arena by crossing the given obstacles in the shortest time 
 possible. We use drift tire buggy wheels to increase grip. Cytron SmartDriveDue -30(MDDS30) provides good 
 stability for current flow with 300RPM Johnson Dc A-class geared motors providing high torque, the exoskeleton 
 used is mild steel, aluminium alloy. This allows us to control technical aspects of racing where each bot 
 made depends on the tarmac.</p>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="container" id="Mayhem">
-        <br><br><br><br><br>
-      <div class="row">
-<div class="col-lg-6" data-aos="fade-right">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
-              
-                <h3>Mayhem&nbsp;&bull;&nbsp;<span class="text-muted">Drag Race</span></h3>
-              <p class="text-justify">RC robots specially designed for racing with enhanced performance on speed are used for drag
-racing. In this race, bots compete against each other on a straight track to reach the end. Points are
-awarded based on the shortest time required to complete the track and penalties are provided
-according to a specific set of rules.</p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="image">
-              <img src="assets/img/projects/3.jpg" class="rounded img-fluid" alt="">
-            </div>
-          </div>
-        </div>
+      <div class="image">
+
+        <img src="assets/img/projects/4.jpg" class="rounded img-fluid" alt="">
       </div>
+    </div>
+    
+    <div class="child  " id="Mayhem">
+      <div class="content1 content pt-4 pt-lg-0 pl-0 pl-lg-3">
+        <h3>Mayhem&nbsp;&bull;&nbsp;<span class="text-muted">Drag Race</span></h3>
+        <br>
+        <p class="text-justify">RC robots specially designed for racing with enhanced performance on speed are used
+          for drag
+          racing. In this race, bots compete against each other on a straight track to reach the end. Points are
+          awarded based on the shortest time required to complete the track and penalties are provided
+          according to a specific set of rules.</p>
+      </div>
+      <div class="image">
+        <img src="assets/img/projects/3.jpg" class="rounded img-fluid" alt="">
+      </div>
+    </div>
 
+ <!-- End #main -->
 
-    </section>
-
-  </main><!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer id="footer">
-  <div class="footer-top">
-    <div class="container">
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-6"><h3>Fear not,Strive forth</h3></div>
+          <div class="col-lg-6">
+            <h3>Fear not,Strive forth</h3>
+          </div>
         </div>
-        <div class="social-links">  
-          <a href="https://www.instagram.com/dreadnoughtrobotics" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.facebook.com/dreadnoughtrobotics" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.linkedin.com/company/dreadnought-robotics/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://www.youtube.com/channel/UC1mdMNwzj-X7uIb3nG41crA" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>
+        <div class="social-links">
+          <a href="https://www.instagram.com/dreadnoughtrobotics" class="instagram" target="_blank"><i
+              class="bx bxl-instagram"></i></a>
+          <a href="https://www.facebook.com/dreadnoughtrobotics" class="facebook" target="_blank"><i
+              class="bx bxl-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/dreadnought-robotics/" class="linkedin" target="_blank"><i
+              class="bx bxl-linkedin"></i></a>
+          <a href="https://www.youtube.com/channel/UC1mdMNwzj-X7uIb3nG41crA" class="youtube" target="_blank"><i
+              class="bx bxl-youtube"></i></a>
         </div>
       </div>
-  </div>
+    </div>
 
 
-</footer><!-- End Footer -->
-
+  </footer><!-- End Footer -->
+</div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
