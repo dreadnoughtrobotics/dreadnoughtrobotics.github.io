@@ -1371,12 +1371,6 @@ ul {
   transform: translateX(0);
 }
 
-@media only screen and (max-width: 360px) {
-
-  .cd-horizontal-timeline .events-content li.selected {}
-
-}
-
 .cd-horizontal-timeline .events-content li.enter-right,
 .cd-horizontal-timeline .events-content li.leave-right {
   -webkit-animation-name: cd-enter-right;
@@ -1925,50 +1919,6 @@ h6 {
 a {
   color: #FF6B6B;
 
-}
-
-.example-header {
-  background: #3D4351;
-  color: #FFF;
-  font-weight: 300;
-  padding: 3em 1em;
-  text-align: center;
-
-  h1 {
-    color: #FFF;
-    font-weight: 300;
-    margin-bottom: 20px
-  }
-
-  p {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 700;
-  }
-}
-
-.container-fluid {
-  .row {
-    padding: 0 0 4em 0;
-
-    &:nth-child(even) {
-      background: #F1F4F5;
-    }
-  }
-}
-
-.example-title {
-  text-align: center;
-  margin-bottom: 60px;
-  padding: 3em 0;
-  border-bottom: 1px solid #E4EAEC;
-
-  p {
-    margin: 0 auto;
-    font-size: 16px;
-    max-width: 400px;
-  }
 }
 
 section#sponsors div.project {

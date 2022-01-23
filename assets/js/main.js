@@ -8,7 +8,7 @@
 		function (e) {
 			if (
 				location.pathname.replace(/^\//, "") ==
-					this.pathname.replace(/^\//, "") &&
+				this.pathname.replace(/^\//, "") &&
 				location.hostname == this.hostname
 			) {
 				e.preventDefault();
@@ -284,6 +284,28 @@
 
 		$("#gallery-flters li").on("click", function () {
 			$("#gallery-flters li").removeClass("filter-active");
+			$(this).addClass("filter-active");
+
+			galleryIsotope.isotope({
+				filter: $(this).data("filter"),
+			});
+		});
+
+		// Initiate venobox lightbox
+		$(document).ready(function () {
+			$(".venobox").venobox({
+				share: false,
+			});
+		});
+	});
+
+	$(window).on("load", function () {
+		var galleryIsotope = $(".team").isotope({
+			itemSelector: ".container",
+		});
+
+		$("#team-filters li").on("click", function () {
+			$("#team-filters li").removeClass("filter-active");
 			$(this).addClass("filter-active");
 
 			galleryIsotope.isotope({
