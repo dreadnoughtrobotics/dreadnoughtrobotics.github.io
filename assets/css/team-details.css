@@ -1,3 +1,7 @@
 .filter-active .nav-link {
     color: #ff6b6b;
 }
+
+.nav-link {
+    cursor: pointer;
+}
