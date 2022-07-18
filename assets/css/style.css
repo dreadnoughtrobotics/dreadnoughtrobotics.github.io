@@ -1,6 +1,9 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html {
+  visibility: hidden;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -57,7 +60,7 @@ h6 {
 /*--------------------------------------------------------------
 # Darkmode toggle feature
 --------------------------------------------------------------*/
-#darkmodeToggle {
+/* #darkmodeToggle {
   position: absolute;
   right: 15px;
   z-index: 51;
@@ -120,7 +123,7 @@ h6 {
 
 .darkOpt .OptDark {
   float: right;
-}
+} */
 
 /*--------------------------------------------------------------
 # Disable AOS delay on mobile
@@ -161,7 +164,7 @@ h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 60px;
 }
 
 @media (max-width: 992px) {
@@ -321,6 +324,12 @@ h6 {
   padding: 10px 0;
 }
 
+.mobile-nav .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 70px;
+}
+
 .mobile-nav * {
   margin: 0;
   padding: 0;
@@ -443,8 +452,7 @@ video {
 }
 
 #hero h2 {
-  /* color: #aeaeae; */
-  color: #C2C2C2;
+  color: #ebebeb;
   margin-bottom: 30px;
   font-size: 16px;
   font-weight: 400;

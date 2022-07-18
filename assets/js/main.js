@@ -8,7 +8,7 @@
 		function (e) {
 			if (
 				location.pathname.replace(/^\//, "") ==
-				this.pathname.replace(/^\//, "") &&
+					this.pathname.replace(/^\//, "") &&
 				location.hostname == this.hostname
 			) {
 				e.preventDefault();
@@ -142,95 +142,117 @@
 	});
 
 	// Darkmode toggle
-	var toggleBtn = `<div id="darkmodeToggle">
-		<input type="checkbox" class="darkmodeCheck" id="darkmodeT"/>
-		<label class="darkLabel" for="darkmodeT">
-			<i class="darkOpt OptLight">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="16" width="16" fill="#f5b942">
-  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-</svg>
-			</i>
-			<i class="darkOpt OptDark">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="16" width="16" fill="#28a7ad">
-  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-</svg>
-			</i>
-			<div class="ball"></div>
-		</label>
-	</div>`;
 
-	$("#header").append(toggleBtn);
+	// 	var toggleBtn = `<div id="darkmodeToggle">
+	// 		<input type="checkbox" class="darkmodeCheck" id="darkmodeT"/>
+	// 		<label class="darkLabel" for="darkmodeT">
+	// 			<i class="darkOpt OptLight">
+	// 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="16" width="16" fill="#f5b942">
+	//   <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+	// </svg>
+	// 			</i>
+	// 			<i class="darkOpt OptDark">
+	// 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="16" width="16" fill="#28a7ad">
+	//   <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+	// </svg>
+	// 			</i>
+	// 			<div class="ball"></div>
+	// 		</label>
+	// 	</div>`;
 
-	if ($(".nav-menu").length) {
-		var setRight =
-			parseInt($(".mobile-nav-toggle").width()) +
-			parseInt($(".mobile-nav-toggle").css("right")) +
-			20;
-		$("#darkmodeToggle").css("right", setRight);
-	}
+	// 	$("#header").append(toggleBtn);
 
-	function updateDarkModePref() {
-		$.getScript("./assets/vendor/darkreader/darkreader.js", function () {
-			DarkReader.setFetchMethod(window.fetch);
-			$(".darkmodeCheck").change(function () {
-				if ($(this).is(":checked")) {
-					DarkReader.enable(
-						{
-							brightness: 100,
-							contrast: 90,
-							sepia: 10,
-						},
-						{
-							css: `.darkLabel {
-									  background-color: #fff;
-									}
+	// 	if ($(".nav-menu").length) {
+	// 		var setRight =
+	// 			parseInt($(".mobile-nav-toggle").width()) +
+	// 			parseInt($(".mobile-nav-toggle").css("right")) +
+	// 			20;
+	// 		$("#darkmodeToggle").css("right", setRight);
+	// 	}
 
-									.darkLabel .ball {
-									  background-color: #000;
-									}`,
-						}
-					);
-					Cookies.set("darkmode", "true");
-				} else {
-					DarkReader.disable();
-					Cookies.set("darkmode", "false");
-				}
-			});
-		});
-	}
+	// 	function updateDarkModePref() {
+	// 		$.getScript("./assets/vendor/darkreader/darkreader.js", function () {
+	// 			DarkReader.setFetchMethod(window.fetch);
+	// 			$(".darkmodeCheck").change(function () {
+	// 				if ($(this).is(":checked")) {
+	// 					DarkReader.enable(
+	// 						{
+	// 							brightness: 100,
+	// 							contrast: 90,
+	// 							sepia: 10,
+	// 						},
+	// 						{
+	// 							css: `.darkLabel {
+	// 									  background-color: #fff;
+	// 									}
 
-	function loadDarkModePref() {
-		$.getScript("./assets/vendor/darkreader/darkreader.js", function () {
-			DarkReader.setFetchMethod(window.fetch);
-			$.getScript("./assets/vendor/jsCookie/dist/js.cookie.js", function () {
-				if (Cookies.get("darkmode") === "true") {
-					DarkReader.enable(
-						{
-							brightness: 100,
-							contrast: 90,
-							sepia: 10,
-						},
-						{
-							css: `.darkLabel {
-									  background-color: #000;
-									}
+	// 									.darkLabel .ball {
+	// 									  background-color: #000;
+	// 									}`,
+	// 						}
+	// 					);
+	// 					Cookies.set("darkmode", "true");
+	// 				} else {
+	// 					DarkReader.disable();
+	// 					Cookies.set("darkmode", "false");
+	// 				}
+	// 			});
+	// 		});
+	// 	}
 
-									.darkLabel .ball {
-									  background-color: #fff;
-									}`,
-						}
-					);
-					$(".darkmodeCheck").prop("checked", true);
-				} else {
-					DarkReader.disable();
-					$(".darkmodeCheck").prop("checked", false);
-				}
-			});
-		});
-	}
+	// 	function loadDarkModePref() {
+	// 		$.getScript("./assets/vendor/darkreader/darkreader.js", function () {
+	// 			DarkReader.setFetchMethod(window.fetch);
+	// 			$.getScript("./assets/vendor/jsCookie/dist/js.cookie.js", function () {
+	// 				if (Cookies.get("darkmode") === "true") {
+	// 					DarkReader.enable(
+	// 						{
+	// 							brightness: 100,
+	// 							contrast: 90,
+	// 							sepia: 10,
+	// 						},
+	// 						{
+	// 							css: `.darkLabel {
+	// 									  background-color: #000;
+	// 									}
 
-	$(window).on("load", loadDarkModePref);
-	updateDarkModePref();
+	// 									.darkLabel .ball {
+	// 									  background-color: #fff;
+	// 									}`,
+	// 						}
+	// 					);
+	// 					$(".darkmodeCheck").prop("checked", true);
+	// 				} else {
+	// 					DarkReader.disable();
+	// 					$(".darkmodeCheck").prop("checked", false);
+	// 				}
+	// 			});
+	// 		});
+	// 	}
+
+	// $(window).on("load", loadDarkModePref);
+	// updateDarkModePref();
+
+	//Dark Mode Default
+
+	// $.getScript("./assets/vendor/darkreader/darkreader.js", function () {
+	// 	DarkReader.setFetchMethod(window.fetch);
+	// 		DarkReader.enable(
+	// 			{
+	// 				brightness: 100,
+	// 				contrast: 90,
+	// 				sepia: 10,
+	// 			},
+	// 			{
+	// 				css: `.darkLabel {
+	// 						background-color: #000;
+	// 						}
+	// 					.darkLabel .ball {
+	// 						background-color: #fff;
+	// 					}`,
+	// 			}
+	// 		);
+	// });
 
 	// Porfolio isotope and filter
 	$(window).on("load", function () {
