@@ -1874,6 +1874,11 @@ section#sponsors div.project {
   margin: 0.5rem 1.2rem;
 }
 
+section#collaborators div.project img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 #overlay {
   position: fixed;
