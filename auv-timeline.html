@@ -37,6 +37,23 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <!-- Darkmode pre -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            document.getElementsByTagName("html")[0].style.visibility = "visible";
+        });
+        $.getScript("./assets/vendor/darkreader/darkreader.js", function () {
+            DarkReader.setFetchMethod(window.fetch);
+            DarkReader.enable({
+                brightness: 100,
+                contrast: 90,
+                sepia: 10,
+            });
+        });
+    </script>
+    <!-- Darkmode ends -->
+
 
 </head>
 
