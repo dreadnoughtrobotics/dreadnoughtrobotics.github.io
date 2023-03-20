@@ -1,0 +1,44 @@
+.column {
+    margin: auto;
+    flex: 50%;
+    padding: 1em;
+}
+
+.row {
+    margin: auto;
+}
+
+.auv_2d {
+    width: 100%;
+    height: 100%;
+    margin: auto auto;
+}
+
+.auv_container {
+    width: 50em;
+    height: 20em;
+}
+
+body {
+    overflow: visible;
+}
+
+@media (max-width: 1200px) {
+    .auv_container {
+        height: 34em;
+    }
+}
+
+@media (max-width: 999px) {
+    .auv_container {
+        height: 26em;
+    }
+
+}
+
+
+@media (max-width: 770px) {
+    .auv_container {
+        height: 18em;
+    }
+}
