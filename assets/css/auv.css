@@ -1,73 +1,237 @@
-.column {
+.recruitment {
+    background: rgba(255, 255, 255, 0.512);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: -1;
+}
+
+.recruitment__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.recruitment__header .rday_timer {
+    text-align: center;
+    font-size: medium;
     margin: auto;
-    flex: 50%;
-    padding: 1em;
 }
 
-.row {
+.recruitment__header #rday_timer {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+    .recruitment__header .rday_timer {
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 2vw;
+        box-align: left;
+    }
+
+    .recruitment__header #rday_timer {
+        font-size: 2vw;
+        box-align: left;
+    }
+}
+
+.recruitment__header div {
+    font-weight: bolder;
+    font-size: large;
+    color: #000000 !important;
+    z-index: 500;
+}
+
+.recruitment__header img {
+    height: 150px;
+    margin-left: -50px;
+}
+
+.recruitment hr {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 1px;
+}
+
+.recruitment__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.recruitment__section {
+    color: black;
+    margin-bottom: 30px;
+}
+
+.recruitment__section__heading {
+    font-weight: bolder;
+    font-size: x-large;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.recruitment__section__content {
+    padding: 0 30px;
+    text-align: justify;
+}
+
+.recruitment__section__table,
+td,
+th {
+    border: 1px solid black;
     margin: auto;
-}
-
-.level_up{
-    font-size: 1.2em;
-}
-
-.auv_2d {
-    width: 100%;
-    height: 100%;
-    margin: auto auto;
-}
-
-.auv_container {
-    width: 50em;
-    height: 20em;
-} 
-
-body {
-    overflow: visible;
-}
-
-@media (max-width: 1200px) {
-    .auv_container {
-        height: 18em;
-    }
-}
-
-@media (max-width: 994px) {
-    .auv_container {
-        height: 26em;
-    }
-
-}
-
-
-@media (max-width: 770px) {
-    .auv_container {
-        height: 18em;
-    }
-}
-
-@media (max-width: 500px) {
-    .auv_container {
-        height: 15em;
-    }
-}
-
-@media (max-width: 450px) {
-    .auv_container {
-        height: 13em;
-    }
-}
-
-.specs_table, td, th{
-    border: 1px solid #ffffff83;
-    margin : auto;
     text-align: center;
 }
 
-.specs_table, td, th{
+.recruitment__section__table,
+td,
+th {
     padding: 2px 5px;
 }
-/* td:nth-child(5){
+
+td:nth-child(5) {
     width: 100%;
+}
+
+#recruitment__headerRight {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.applyContent {
+    text-align: center !important;
+}
+
+.accordion {
+    background-color: rgba(221, 221, 221, 0.705);
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.3s;
+
+}
+
+button.accordion:focus {
+    outline: 0;
+
+}
+
+button.accordion:active {
+    outline: 0;
+}
+
+.active,
+button.accordion:hover {
+    background-color: rgb(202 200 200 / 80%);
+}
+
+.accordion:after {
+    content: '\02795';
+    font-size: 11px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #cacaca;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.panel.show {
+    opacity: 1;
+    max-height: 500px;
+}
+
+.accordion.active:after {
+    content: "\2796";
+}
+
+/* #footer {
+    background: none !important;
+}
+
+#footer::before {
+    display: none !important;
 } */
+
+.tour_bots {
+    margin: auto;
+}
+
+@media only screen and (max-width: 515px) {
+    .form_button {
+        margin: 0.5em 0;
+    }
+}
+
+
+/* general styling */
+
+.container_timer {
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* h1 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+} */
+
+ul {
+    padding-inline-start: 0;
+}
+
+li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+li span {
+    display: block;
+    font-size: 2rem;
+}
+
+.emoji {
+    display: none;
+    padding: 1rem;
+}
+
+.emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+}
+
+@media all and (max-width: 768px) {
+    h1 {
+        font-size: calc(1.5rem * var(--smaller));
+    }
+
+    li {
+        font-size: calc(1.125rem * var(--smaller));
+    }
+
+    li span {
+        font-size: calc(3.375rem * var(--smaller));
+    }
+}
