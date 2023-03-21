@@ -195,11 +195,11 @@ button.accordion:hover {
     text-transform: uppercase;
 } */
 
-ul {
+.recruit_ul {
     padding-inline-start: 0;
 }
 
-li {
+.timer_recruit {
     display: inline-block;
     font-size: 1.5em;
     list-style-type: none;
