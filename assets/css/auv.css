@@ -8,6 +8,10 @@
     margin: auto;
 }
 
+.level_up{
+    font-size: 1.3em;
+}
+
 .auv_2d {
     width: 100%;
     height: 100%;
@@ -17,7 +21,7 @@
 .auv_container {
     width: 50em;
     height: 20em;
-}
+} 
 
 body {
     overflow: visible;
@@ -25,11 +29,11 @@ body {
 
 @media (max-width: 1200px) {
     .auv_container {
-        height: 34em;
+        height: 18em;
     }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 994px) {
     .auv_container {
         height: 26em;
     }
@@ -42,3 +46,28 @@ body {
         height: 18em;
     }
 }
+
+@media (max-width: 500px) {
+    .auv_container {
+        height: 15em;
+    }
+}
+
+@media (max-width: 450px) {
+    .auv_container {
+        height: 13em;
+    }
+}
+
+.specs_table, td, th{
+    border: 1px solid #ffffff83;
+    margin : auto;
+    text-align: center;
+}
+
+.specs_table, td, th{
+    padding: 2px 5px;
+}
+/* td:nth-child(5){
+    width: 100%;
+} */
