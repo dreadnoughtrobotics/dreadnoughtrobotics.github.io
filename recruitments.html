@@ -46,6 +46,49 @@
         sepia: 10,
       });
     });
+    (function () {
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+      //I'm adding this section so I don't have to keep updating this pen every year :-)
+      //remove this if you don't need it
+      let today = new Date(),
+        dd = String(today.getDate()).padStart(2, "0"),
+        mm = String(today.getMonth() + 1).padStart(2, "0"),
+        yyyy = today.getFullYear(),
+        nextYear = yyyy + 1,
+        dayMonth = "04/05/",
+        birthday = dayMonth + yyyy;
+
+      today = mm + "/" + dd + "/" + yyyy;
+      if (today > birthday) {
+        birthday = dayMonth + nextYear;
+      }
+      //end
+
+      const countDown = new Date(birthday).getTime(),
+        x = setInterval(function () {
+
+          const now = new Date().getTime(),
+            distance = countDown - now;
+
+          document.getElementById("days").innerText = Math.floor(distance / (day)),
+            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+          //do something later when date is reached
+          if (distance < 0) {
+            document.getElementById("headline").innerText = "Recruitments Close in";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+          }
+          //seconds
+        }, 0)
+    }());
   </script>
   <!-- Darkmode ends -->
 
@@ -62,37 +105,36 @@
         <a href="index.html"><img src="assets/img/hero-logo.png" alt="" class="img-fluid"></a>
       </div>
 
-                  <nav class="nav-menu d-none d-lg-block">
-                <ul class="nav-inner">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="drop-down">
-                        <a href="">About</a>
-                        <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="Timeline.html">Timeline</a></li>
-                            <!-- <li><a href="auv-timeline.html">AUV - Timeline</a></li> -->
-                        </ul>
-                    </li>
-                    <li class="drop-down"><a href="our-team.html">Our Team</a>
-                        <ul>
-                            <li><a href="our-team.html">Our Team</a></li>
-                            <li><a href="team-details.html">Alumni</a></li>
-                        </ul>
-                    </li>
-                    <li class="logo"><a href="#hero"><img src="assets/img/hero-logo.png" alt="" class="img-fluid"></a>
-                    </li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li class="drop-down">
-                        <a href="bot-details.html">Our Bots</a>
-                        <ul>
-                            <li><a href="auv.html">AUV Calypso</a></li>
-                            <li><a href="bot-details.html#Arm">Robotic Arm</a></li>
-                            <li><a href="bot-details.html#Boat">RC Boat</a></li>
-                            <li><a href="bot-details.html#Skyline">Skyline</a></li>
-                            <li><a href="bot-details.html#Torpedo">Torpedo</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="index.html#contact">Contact</a></li>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul class="nav-inner">
+          <li><a href="index.html">Home</a></li>
+          <li class="drop-down">
+            <a href="">About</a>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="Timeline.html">Timeline</a></li>
+              <li><a href="auv-timeline.html">AUV - Timeline</a></li>
+            </ul>
+          </li>
+          <li class="drop-down"><a href="our-team.html">Our Team</a>
+            <ul>
+              <li><a href="our-team.html">Our Team</a></li>
+              <li><a href="team-details.html">Alumni</a></li>
+            </ul>
+          </li>
+          <li class="logo"><a href="#hero"><img src="assets/img/hero-logo.png" alt="" class="img-fluid"></a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="drop-down">
+            <a href="bot-details.html">Our Bots</a>
+            <ul>
+              <li><a href="bot-details.html#Boat">RC Boat</a></li>
+              <li><a href="bot-details.html#Skyline">Skyline</a></li>
+              <li><a href="bot-details.html#Arm">Robotic Arm</a></li>
+              <li><a href="bot-details.html#Torpedo">Torpedo</a></li>
+              <li><a href="bot-details.html#Calypso">Calypso</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">Contact</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -138,7 +180,7 @@
               proofing, Design and manufacturing of underwatever drones
             </p>
           </div>
-        </div><Br>
+        </div>
         <div class="recruitment__section">
           <div class="recruitment__section__heading">
             Apply Now!
@@ -146,9 +188,11 @@
           <div class="recruitment__section__content applyContent">
             You can be a part of this prestigious team. Click the below button to apply and join the WhatsApp group
             <br><br>
-            <a href="https://forms.gle/csNxtC5Kx7QCgzEi8" id="applySpan" class="btn btn-primary form_button" target="_blank">Click
+            <a href="https://forms.gle/csNxtC5Kx7QCgzEi8" id="applySpan" class="btn btn-primary form_button"
+              target="_blank">Click
               here to fill the form!</a>
-            <a id="chatSpan" class='btn btn-success form_button' href="https://chat.whatsapp.com/BnybzfYm6GYE5QBMTWqFQD">Join the
+            <a id="chatSpan" class='btn btn-success form_button'
+              href="https://chat.whatsapp.com/BnybzfYm6GYE5QBMTWqFQD">Join the
               WhatsApp group</a>
 
           </div>
@@ -178,11 +222,28 @@
                   <td>Team Showcase</td>
                 </tr>
                 <tr>
-                  <td>To Be Announced</td>
+                  <td>05/04/2023</td>
                   <td>Interview Day</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+
+        <div class="container_timer">
+          <h3 id="headline">Recruitments Close in</h3>
+          <div id="countdown">
+            <ul>
+              <li><span id="days"></span>days</li>
+              <li><span id="hours"></span>Hours</li>
+              <li><span id="minutes"></span>Minutes</li>
+              <li><span id="seconds"></span>Seconds</li>
+            </ul>
+          </div>
+          <div id="content" class="emoji">
+            <span>🥳</span>
+            <span>🎉</span>
+            <span>🎂</span>
           </div>
         </div>
 
@@ -195,7 +256,7 @@
               formed by a group of dedicated individuals who are eager to explore their field of interest. By joining a
               special team, students can participate in inter-college, national, and even international competitions,
               allowing them to showcase their skills and compete with like-minded individuals.<Br><Br>
-              <b>VIT has only 11 special teams, which adds to the exclusivity of being part of one.</b> Being part of a
+              <b>VIT has 12 special teams, which adds to the exclusivity of being part of one.</b> Being part of a
               special team is an enriching experience that provides students with a chance to immerse themselves in a
               community of like-minded individuals who are equally passionate about the same subject. Each team has a
               specific area of focus and provides students with opportunities to develop a range of skills, including
@@ -254,9 +315,10 @@
           </div>
           <button class="accordion"><strong>Can I take part in the recruitment of multiple teams?</strong></button>
           <div class="panel">
-            <p>Once you are selected by a team, you cannot sit for recruitment process of other teams. We appreciate
-              your interest in multiple opportunities, but we want to ensure fairness and give other candidates the
-              chance to be considered as well. Thank you for your understanding.</p>
+            <p>You can apply for as many teams as possible. But once you have accepted the invitation of any team to
+              join, you cannot sit for recruitment process of other teams. We appreciate your interest in multiple
+              opportunities, but we want to ensure fairness and give other candidates the chance to be considered as
+              well. Thank you for your understanding.</p>
           </div>
           <!-- <button class="accordion"><strong>What are the recruitment dates?</strong></button>
           <div class="panel">
