@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #555555;
 }
 
@@ -79,7 +79,7 @@ h6 {
 }
 
 #header .logo h1 {
-  font-size: 28px;
+  font-size: 5em;
   margin: 0;
   line-height: 1;
   font-weight: 400;
@@ -142,9 +142,9 @@ h6 {
   color: #151515;
   padding: 15px 25px;
   transition: 0.3s;
-  font-size: 15px;
+  font-size: 1em;
   text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .nav-menu a:hover,
@@ -181,7 +181,7 @@ h6 {
 
 .nav-menu .drop-down ul a {
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 0.85em;
   font-weight: 400;
   color: #151515;
 }
@@ -372,22 +372,32 @@ video {
 }
 
 #hero .hero-logo {
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 #hero h1 {
-  margin: 0 0 30px 0;
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 56px;
-  color: #fff;
+  font-size: 3.5em;
+  font-weight: 800;   
+  color: #fff !important;
+  line-height: 1em;
+  text-transform: uppercase;
 }
 
 #hero h2 {
-  color: #ebebeb;
-  margin-bottom: 30px;
-  font-size: 16px;
-  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.75em;
+  font-weight: 600;
+  color: #fff !important;
+  line-height: 1em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+#hero h3 {
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight:500;
+  color: #fff;
+  line-height: 1em;
   text-transform: uppercase;
 }
 
@@ -419,11 +429,11 @@ video {
 
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 2em;
   }
 
   #hero h2 {
+    font-size: 1em;
     line-height: 22px;
   }
 }
@@ -853,7 +863,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: url("../img/cool-footer-img.jpg") center center repeat;
+  background: url("../img/footer-bg.png") center center repeat;
   color: #fff;
   font-size: 14px;
   position: relative;
@@ -1850,7 +1860,7 @@ ul {
 body {
   color: #768390;
   background: #FFF;
-  font-family: "Effra", Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 0;
   -webkit-font-smoothing: antialiased;
 }
